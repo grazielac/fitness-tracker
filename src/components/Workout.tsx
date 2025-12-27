@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 
-function Workout({ updateForm }) {
+type WorkoutProps = {
+  updateForm: () => void;
+};
+
+
+function Workout({ updateForm }: WorkoutProps) {
   const [exercise, setExercise] = useState("");
   const [sets, setSets] = useState("");
   const [reps, setReps] = useState("");
@@ -116,7 +121,7 @@ function Workout({ updateForm }) {
         </div>
 
         {error && <p style={{ color: "red" }}>{error}</p>}
-        
+
         <button type="submit">Add workout</button>
       </form>
     </div>

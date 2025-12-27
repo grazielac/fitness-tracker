@@ -11,7 +11,12 @@ type Workout = {
   date: string;
 };
 
-function DisplayWorkout({ refreshCounter }) {
+type DisplayWorkoutProps = {
+  refreshCounter: number;
+};
+
+
+function DisplayWorkout({ refreshCounter }: DisplayWorkoutProps) {
   const [workout, setWorkout] = useState<Workout | null>(null); // state to store the last workout
   const [history, setHistory] = useState<Workout[]>([]); // holds the last 5 workouts
   const [error, setError] = useState<string | null>(null);
