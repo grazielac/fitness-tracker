@@ -85,7 +85,7 @@ function DisplayWorkout({ refreshCounter }) {
             <li key={w.id}>
               {w.exercise} — {w.sets} × {w.reps} @ {w.weight}kg
             </li>
-          ))}
+          ))} 
         </ul>
       )}
     </div>
