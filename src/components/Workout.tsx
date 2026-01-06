@@ -5,7 +5,6 @@ type WorkoutProps = {
   updateForm: () => void;
 };
 
-
 function Workout({ updateForm }: WorkoutProps) {
   const [exercise, setExercise] = useState("");
   const [sets, setSets] = useState("");
@@ -71,29 +70,41 @@ function Workout({ updateForm }: WorkoutProps) {
 
   return (
     <div>
+      <h1>Log Workout</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Exercise</label>
+        <div className="bg-gray-200">
+          <div>
+            <input
+              type="text"
+              className="border-b outline-none"
+              placeholder="Workout name"
+            ></input>
+          </div>
+
           <input
+            className="border-none outline-none"
+            placeholder="Exercise name"
             type="text"
             value={exercise}
             onChange={(e) => setExercise(e.target.value)}
           ></input>
         </div>
 
-        <div>
+        <div className="space-y-2 bg-gray ">
           <label>Sets</label>
           <input
             type="number"
             value={sets}
+            placeholder="0"
+            className="border-b border-gray-300 focus:border-black outline-none px-2 w-full"
             onChange={(e) => setSets(e.target.value)}
           ></input>
-        </div>
 
-        <div>
-          <label>Reps</label>
+          <span className="text-xs text-gray-400">Reps</span>
           <input
             type="number"
+            placeholder="0"
+            className="border-none outline-none"
             value={reps}
             onChange={(e) => setReps(e.target.value)}
           ></input>
@@ -103,6 +114,7 @@ function Workout({ updateForm }: WorkoutProps) {
           <label>Weight</label>
           <input
             type="number"
+            placeholder="0"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
           ></input>
