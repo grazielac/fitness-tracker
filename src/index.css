@@ -1,68 +1,79 @@
+@import "tailwindcss";
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --text-color: #442F2B;
+}
+
+@font-face {
+  font-family: "ParfumeriScript";
+  src: url("./assets/fonts/parfumerie-script-regular.otf");
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+@font-face {
+  font-family: "TimesNewCondensed";
+  src: url("./assets/fonts/TimesNewRomanMT-Condensed-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
 }
-a:hover {
-  color: #535bf2;
+
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("./assets/fonts/CormorantGaramond-VariableFont_wght.ttf");
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--text-color);
 }
 
 h1 {
-  font-size: 3.2em;
+  font-family: 'TimesNewCondensed', serif;
   line-height: 1.1;
+  letter-spacing: -0.07em;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+h2,
+h3 {
+  font-family: 'TimesNewCondensed', serif;
+  font-size: 3.2em;
+  line-height: 1.1;
+  letter-spacing: -0.07em;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+p,
+label,
+span {
+  font-family: "CormorantGaramond", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #fbf7f6;
   }
   a:hover {
-    color: #747bff;
+    color: #f5cbd7;
   }
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Remove number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
