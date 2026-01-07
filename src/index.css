@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --text-color: #442F2B;
+  --text-color: #442f2b;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 @font-face {
@@ -25,32 +31,71 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;
   color: var(--text-color);
+  font-family: "Montserrat", sans-serif;
 }
 
 h1 {
-  font-family: 'TimesNewCondensed', serif;
+  font-family: "TimesNewCondensed", serif;
+  font-size: 1.7em;
   line-height: 1.1;
   letter-spacing: -0.07em;
 }
 
-h2,
+h2 {
+  font-family: "TimesNewCondensed", serif;
+  font-size: 1.2em;
+  line-height: 1.1;
+  letter-spacing: -0.07em;
+}
+
 h3 {
-  font-family: 'TimesNewCondensed', serif;
+  font-family: "TimesNewCondensed", serif;
+  font-size: 0.8em;
+  line-height: 1.1;
+  letter-spacing: -0.07em;
+
+}
+
+h4 {
+  font-family: "TimesNewCondensed", serif;
   font-size: 3.2em;
   line-height: 1.1;
   letter-spacing: -0.07em;
+
+}
+
+h5 {
+  font-family: "TimesNewCondensed", serif;
+  font-size: 3.2em;
+  line-height: 1.1;
+  letter-spacing: -0.07em;
+
+}
+
+h6 {
+  font-family: "TimesNewCondensed", serif;
+  font-size: 3.2em;
+  line-height: 1.1;
+  letter-spacing: -0.07em;
+
 }
 
 p,
 label,
 span {
   font-family: "CormorantGaramond", serif;
-  font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.4;
   letter-spacing: -0.02em;
 }
 
@@ -62,18 +107,4 @@ span {
   a:hover {
     color: #f5cbd7;
   }
-  button {
-    background-color: #f9f9f9;
-  }
 }
-
-/* Remove number input arrows */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* input[type="number"] {
-  -moz-appearance: textfield;
-} */
