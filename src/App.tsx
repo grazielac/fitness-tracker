@@ -1,22 +1,18 @@
-import './index.css'
-import { useState } from 'react'
-import './App.css'
-import DisplayWorkout from './components/DisplayWorkout'
-import Workout from './components/Workout'
+import { Routes, Route} from "react-router-dom";
+import Progress from "./components/Progress";
+import Workout from "./features/workouts/components/WorkoutForm"
 
 function App() {
-  const [ refreshCounter, setRefreshCounter ] = useState(0);
-
-  const update = () => {
-    setRefreshCounter(prev => prev + 1)
-  }
 
   return (
     <>
-      <Workout updateForm={update}  />
-      <DisplayWorkout refreshCounter={refreshCounter} />
+    <Routes>
+      <Route path="/log-workout" element={<Workout />} />
+      <Route path="/progress" element={<Progress />} />
+
+    </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
