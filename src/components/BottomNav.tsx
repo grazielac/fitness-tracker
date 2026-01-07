@@ -11,24 +11,30 @@ function BottomNav() {
   return (
     <div className="bg-[#C4B6A7] w-full py-2 fixed left-0 bottom-0 border-t border-gray-200 flex justify-around items-center ">
       <div className="w-full flex justify-around items-center pt-2 pb-2">
-        <div className="flex flex-col justify-center items-center">
-          <CiHome size={26} />
-          <p className="text-2xl">Home</p>
-        </div>
+        <Link to="/home">
+          <div className="flex flex-col justify-center items-center">
+            <CiHome size={26} />
+            <p className="text-2xl">Home</p>
+          </div>
+        </Link>
         <Link to="/log-workout">
           <div className="flex flex-col justify-center items-center">
             <GoPlus size={26} />
             <p>Log</p>
           </div>
         </Link>
-        <div className="flex flex-col justify-center items-center">
-          <TbProgress size={26} />
-          <button onClick={() => navigate("/progress")}> Progress</button>
-        </div>
-        <div className="flex flex-col justify-center items-center">
-          <CiUser size={26} />
-          <p>Profile</p>
-        </div>
+        <Link to="/progress">
+          <div className="flex flex-col justify-center items-center">
+            <TbProgress size={26} />
+            <button onClick={() => navigate("/progress")}> Progress</button>
+          </div>
+        </Link>
+        <Link to="/profile">
+          <div className="flex flex-col justify-center items-center">
+            <CiUser size={26} />
+            <p>Profile</p>
+          </div>
+        </Link>
       </div>
     </div>
   );
