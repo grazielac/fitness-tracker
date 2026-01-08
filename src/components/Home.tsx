@@ -1,43 +1,13 @@
-type CalendarDate = {
-  year: number;
-  month: string;
-  day: number;
-};
 
 function Home() {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
 
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  const today = new Intl.DateTimeFormat("en-UK", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date());
 
-  const d = new Date();
-  const month = months[d.getMonth()];
-  const weekday = days[d.getDay()];
-  const date = d.getDate();
-  const year = d.getFullYear();
-  const today = `${weekday}, ${month} ${date} ${year}`; // Friday, January 8
-
-  console.log(today);
 
   return (
     <div>
