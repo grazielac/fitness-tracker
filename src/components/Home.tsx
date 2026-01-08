@@ -1,6 +1,4 @@
-
 function Home() {
-
   const today = new Intl.DateTimeFormat("en-UK", {
     weekday: "long",
     month: "long",
@@ -8,6 +6,22 @@ function Home() {
     year: "numeric",
   }).format(new Date());
 
+  // CURRENT HOUR
+  const date = new Date();
+  const currentHour = date.getHours();
+
+  const morning = "Good morning, pretty";
+  const noon = "Midday reminder: progress > perfection 🌱";
+  const night = "You did enough today 🤍 rest well";
+
+  let greeting = "";
+  if (currentHour >= 5 && currentHour <= 11) {
+    greeting = morning;
+  } else if (currentHour >= 12 && currentHour <= 17) {
+    greeting = noon;
+  } else {
+    greeting = night;
+  }
 
   return (
     <div>
@@ -15,7 +29,7 @@ function Home() {
         <p style={{ fontFamily: "Montserrat, sans-serif" }} className="text-md">
           {today}
         </p>
-        <h1 className="text-lg leading-tighter">Good morning</h1>
+        <h1 className="text-lg leading-tighter">{greeting}</h1>
       </div>
 
       {/* TODAY'S WORKOUT */}
